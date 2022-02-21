@@ -59,7 +59,7 @@ function updateGuess(guessNumber, numberOfLetters, inputPosArray, colors) {
 function clickMe() {
   guessNumber ++
   if (guessNumber > maxGuesses) {
-    alert("You lost...BOOOOHHHOOOOO")
+    alert(`You lost...BOOOOHHHOOOOO, ${currentWord}`)
   }
   var uno = document.getElementById("1")
   var dos = document.getElementById("2")
