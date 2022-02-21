@@ -1,7 +1,7 @@
 //var fs = require("fs");
 //var text = fs.readFileSync("./words.txt");
 //var words = text.split("\n")
-testing = true
+testing = false
 guessNumber = 0
 maxGuesses = 6
 gNumLetters = 5; // TBD: get this from the web-page
