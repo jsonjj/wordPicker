@@ -45,7 +45,7 @@ function letters(num) {
   return newWord
 }
 
-var currentWord = letters(gNumLetters)
+var currentWord = letters(gNumLetters).toLowerCase()
 //currentWord = letterWords[Math.floor(Math.random() * (letterWords.length + 1))];
 
 function updateGuess(guessNumber, numberOfLetters, inputPosArray, colors) {
@@ -69,7 +69,8 @@ function clickMe() {
   var numeros = [uno, dos, tres, cuatro, cinco]
   var numValues = [uno.value, dos.value, tres.value, cuatro.value, cinco.value]
   var id = ["1", "2", "3", "4", "5"]
-  var input = numValues.join("")
+  var upperCaseInput = numValues.join("")
+  var input = upperCaseInput.toLowerCase()
   console.log(input)
   console.log(currentWord)
   //retVal = []
