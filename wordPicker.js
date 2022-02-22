@@ -46,6 +46,7 @@ function letters(num) {
 }
 
 var currentWord = letters(gNumLetters).toLowerCase()
+console.log("hello, is this working")
 //currentWord = letterWords[Math.floor(Math.random() * (letterWords.length + 1))];
 
 function updateGuess(guessNumber, numberOfLetters, inputPosArray, colors) {
