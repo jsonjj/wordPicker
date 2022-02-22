@@ -22,7 +22,7 @@ function loadDoc() {
 //console.log(`${words}`)
 
 
-currentLetters = []
+
 betterWords = []
 letterWords = []
 for (let i = 0; i < words.length; i++) {
@@ -66,6 +66,7 @@ function clickMe() {
   if (guessNumber > maxGuesses) {
     alert(`You lost...BOOOOHHHOOOOO, ${currentWord}`)
   }
+  currentLetters = currentWord.split("")
   var uno = document.getElementById("1")
   var dos = document.getElementById("2")
   var tres = document.getElementById("3")
@@ -81,16 +82,24 @@ function clickMe() {
   //retVal = []
   var colors = []
   var win = false
+  var index;
   for (let i = 0; i < currentWord.length; i++) {
+      index = currentLetters.indexOf(input[i])
       if (currentWord[i] == input[i]) {
         console.log("green", currentWord[i], input[i])
+        currentLetters.splice(i, 1)
         //numeros[i].style.color = "green";
         colors.push("green")
+        
         if (currentWord == input) {
           win = true
         }
       } else {
-        var color = (currentWord.indexOf(input[i]) == -1) ?  "gray" : "yellow";
+        var color = "red";
+        if (index != -1) {
+          color = "yellow"
+          currentLetters.splice(index, 1)
+        }
         console.log("not green", currentWord[i], input[i], color)
         //numeros[1].style.color = color
         colors.push(color)
