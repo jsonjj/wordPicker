@@ -52,7 +52,13 @@ console.log("hello, is this working")
 function updateGuess(guessNumber, numberOfLetters, inputPosArray, colors) {
   console.log(`hey, were in here; ${colors}`)
   for (let i=0; i < numberOfLetters; i++) {
-    document.getElementById(`guess${guessNumber}_${i + 1}`).textContent=inputPosArray[i];
+    var guess;
+    if (i < numberOfLetters - 1) {
+      guess = inputPosArray[i].concat(" &nbsp;&nbsp;&nbsp; ")
+    } else {
+      guess = inputPosArray[i]
+    }
+    document.getElementById(`guess${guessNumber}_${i + 1}`).textContent=guess;
     document.getElementById(`guess${guessNumber}_${i + 1}`).style.color=colors[i];
   }
 }
